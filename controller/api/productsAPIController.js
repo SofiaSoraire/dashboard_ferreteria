@@ -4,42 +4,40 @@ const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const moment = require('moment');
 
-const Users = db.User;
+const Products = db.Product;
 
 const controller = {
 
     'list': (req, res) => {
-        Users.findAll()
-        .then(user => {
+        Products.findAll()
+        .then(product => {
             let respuesta = {
                 meta: {
                     status : 200,
-                    total: user.length,
-                    url: 'api/users/'
+                    total: product.length,
+                    url: 'api/products/'
                 },
-                data: user
+                data: product
             }
                 res.json(respuesta);
             })
     },
     
     'detail': (req, res) => {
-        Users.findByPk(req.params.id)
-            .then(user => {
+        Products.findByPk(req.params.id)
+            .then(product => {
                 let respuesta = {
                     meta: {
                         status: 200,
-                        total: user.length,
-                        url: '/api/users/:id'
+                        total: product.length,
+                        url: '/api/products/:id'
                     },
-                    data: user
+                    data: product
                 }
                 res.json(respuesta);
             });
     },
  
-
-
     }
 
 module.exports = controller;

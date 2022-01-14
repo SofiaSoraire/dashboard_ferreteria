@@ -5,7 +5,8 @@ const session = require('express-session');
 const cookies = require('cookie-parser');
 
 
-const apiUsersRouter= require('./routes/api/users')
+const apiUsersRouter= require('./routes/api/users');
+const apiProductsRouter= require('./routes/api/products');
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
@@ -21,7 +22,7 @@ app.use(cookies());
 
 
 app.use('/api/users',apiUsersRouter);
-//app.use('/api/movies',apiMoviesRouter);
+app.use('/api/products',apiProductsRouter);
 
 const port = process.env.PORT || 3030;
 
