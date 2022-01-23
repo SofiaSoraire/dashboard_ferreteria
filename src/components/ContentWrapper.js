@@ -1,6 +1,7 @@
 import React from 'react';
 import TopBar from './TopBar';
 import ContentRowTop from './ContentRowTop';
+import Movie from './Movie';
 import Footer from './Footer';
 function ContentWrapper(){
     return (
@@ -10,7 +11,8 @@ function ContentWrapper(){
                 {/*<!-- Main Content -->*/}
                 <div id="content">
                     <TopBar />
-                    <ContentRowTop />
+                    <ContentRowTop /> {/*<!-- Total de productos, total de usuarios, total de categorias -->*/}
+                    <Movie />
                     <Footer />
                 </div>
             </div>    

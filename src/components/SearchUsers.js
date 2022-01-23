@@ -2,7 +2,7 @@ import React , { useState, useEffect}  from 'react';
 
 // import noPoster from '../assets/images/darth-vader.jpg';
 
-function SearchMovies(){
+function SearchUsers(){
 	const [users,setUsers] = useState([])
 	const apiKey = 'cc5c184f';
 	let Search = '' 
@@ -18,7 +18,7 @@ function SearchMovies(){
 			.then((response => response.json()))
 			.then(data => setUsers(data.data))
 			.catch((e) => console.log(e))
-});
+	});
 
 
 
@@ -56,7 +56,7 @@ function SearchMovies(){
 					</div>
 					<div className="row">
 						<div className="col-12">
-							<h2>Películas para la palabra: {Search}</h2>
+							<h2>Buscar usuarios: {Search}</h2>
 						</div>
 						{/* Listado de películas */}
 						{
@@ -94,4 +94,4 @@ function SearchMovies(){
 	)
 }
 
-export default SearchMovies;
+export default SearchUsers;

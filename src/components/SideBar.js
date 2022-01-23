@@ -1,12 +1,12 @@
 import React from 'react';
-import image from '../assets/images/logo-DH.png';
-import ContentWrapper from './ContentWrapper';
-import GenresInDb from './GenresInDb';
-import LastMovieInDb from './LastMovieInDb';
-import ContentRowMovies from './ContentRowMovies';
-import NotFound from './NotFound';
-import SearchMovies from './SearchMovies';
+import image from '../assets/images/LogoFerreteria80x54.png';
 import {Link, Route, Routes} from 'react-router-dom';
+import ContentWrapper from './ContentWrapper';
+import SearchUsers from './SearchUsers';
+import LastMovieInDb from './LastMovieInDb';
+import NotFound from './NotFound';
+
+
 
 function SideBar(){
     return(
@@ -15,20 +15,23 @@ function SideBar(){
             <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 {/*<!-- Sidebar - Brand -->*/}
-                <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+                <Link className="sidebar-brand d-flex align-items-center justify-content-center" to="/">
                     <div className="sidebar-brand-icon">
-                        <img className="w-100" src={image} alt="Digital House"/>
+                        <img className="w-100" src={image} alt="Ferreteria"/>
                     </div>
-                </a>
+                </Link>
+
+                {/*<!-- Enlaces -->*/}
 
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider my-0"/>
 
-                {/*<!-- Nav Item - Dashboard -->*/}
+                {/*<!-- Etiqueta Dashboard -->*/}
                 <li className="nav-item active">
                     <Link className="nav-link" to="/">
                         <i className="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard - DH movies</span></Link>
+                        <span>Dashboard - Ferretería</span>
+                    </Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
@@ -37,75 +40,60 @@ function SideBar(){
                 {/*<!-- Heading -->*/}
                 <div className="sidebar-heading">Actions</div>
 
-                {/*<!-- Nav Item - Pages -->*/}
+                {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
-                <Link className="nav-link" to="/GenresInDb">
-                        <i className="fas fa-fw fa-folder"></i>
-                        <span>Pages</span>
+                    <Link className="nav-link" to="LastMovieInDb">
+                        <i className="fas fa-fw fa-info"></i>
+                        <span>Detalle último producto creado</span>
                     </Link>
                 </li>
 
-                {/*<!-- Nav Item - Charts -->*/}
-                <li className="nav-item">
-                    <Link className="nav-link" to="/LastMovieInDb">
-                        <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Charts</span></Link>
-                </li>
-
                 {/*<!-- Nav Item - Tables -->*/}
-                <li className="nav-item nav-link">
-                <Link className="nav-link" to="/ContentRowMovies">
-                        <i className="fas fa-fw fa-table"></i>
-                        <span>Tables</span></Link>
+                <li className="nav-item">
+                    <Link className="nav-link" to="/">
+                        <i className="fas fa-fw fa-chart-pie"></i>
+                        <span>Productos por categoria</span>
+                    </Link>
                 </li>
 
-                <li className="nav-item nav-link">
-                <Link className="nav-link" to="/SearchMovies">
-                        <i className="fas fa-fw fa-table"></i>
-                        <span>Tables</span></Link>
+                {/*<!-- Busqueda de usuarios -->*/}
+                <li className="nav-item">
+                    <Link className="nav-link" to="SearchUsers">
+                        <i className="fas fa-user"></i>
+                        <span>Listado de usuarios</span>
+                    </Link>
                 </li>
 
+                {/*<!-- Nav Item - Pages -->*/}
+                <li className="nav-item">
+                    <Link className="nav-link collapsed" to="/">
+                        <i className="fas fa-hammer"></i>
+                        <span>Listado de productos</span>
+                    </Link>
+                </li>
 
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider d-none d-md-block"/>
             </ul>
             {/*<!-- End of Sidebar -->*/}
+            
+            {/*<!-- Rutas -->*/}
 
-            {/*<!-- Microdesafio 1 -->*/}
-            {/*<!--<Route exact path="/">
-                <ContentWrapper />
-            </Route>
-            <Route path="/GenresInDb">
-                <GenresInDb />
-            </Route>
-            <Route path="/LastMovieInDb">
-                <LastMovieInDb />
-            </Route>
-            <Route path="/ContentRowMovies">
-                <ContentRowMovies />
-            </Route>*/}
-            {/*<!-- End Microdesafio 1 -->*/}
-
-            {/*<!-- End Microdesafio 2 -->*/}
             <Routes>
                 <Route exact path="/" element={ <ContentWrapper /> }>
                 </Route>
-
-                <Route path="/GenresInDb" element={ <GenresInDb /> }> 
+                
+                <Route path="/SearchUsers" element={ <SearchUsers /> }>
                 </Route>
 
                 <Route path="/LastMovieInDb" element={ <LastMovieInDb /> }> 
                 </Route>
 
-                <Route path="/ContentRowMovies" element={ <ContentRowMovies /> }>
-                </Route>
-                
-                <Route path="/SearchMovies" element={ <SearchMovies /> }>
-                </Route>
-
                 <Route path="*" element={ <NotFound/> } />
+
             </Routes>
-            {/*<!-- End Microdesafio 2 -->*/}
+
+
         </React.Fragment>
     )
 }
