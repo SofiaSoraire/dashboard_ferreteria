@@ -3,7 +3,10 @@ import image from '../assets/images/LogoFerreteria80x54.png';
 import {Link, Route, Routes} from 'react-router-dom';
 import ContentWrapper from './ContentWrapper';
 import SearchUsers from './SearchUsers';
-import LastMovieInDb from './LastMovieInDb';
+import ListProducts from './ListProducts';
+import LastProductInDb from './LastProductInDb';
+import ProductsTable from './ProductsTable';
+import UsersTable from './UsersTable';
 import NotFound from './NotFound';
 
 
@@ -42,7 +45,7 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link" to="LastMovieInDb">
+                    <Link className="nav-link" to="LastProductInDb">
                         <i className="fas fa-fw fa-info"></i>
                         <span>Detalle último producto creado</span>
                     </Link>
@@ -64,11 +67,25 @@ function SideBar(){
                     </Link>
                 </li>
 
+                <li className="nav-item">
+                    <Link className="nav-link collapsed" to="UsersTable">
+                        <i className="fas fa-table"></i>
+                        <span>Tabla de usuarios</span>
+                    </Link>
+                </li>
+
                 {/*<!-- Nav Item - Pages -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link collapsed" to="/">
+                    <Link className="nav-link collapsed" to="ListProducts">
                         <i className="fas fa-hammer"></i>
                         <span>Listado de productos</span>
+                    </Link>
+                </li>
+
+                <li className="nav-item">
+                    <Link className="nav-link collapsed" to="ProductsTable">
+                        <i className="fas fa-table"></i>
+                        <span>Tabla de productos</span>
                     </Link>
                 </li>
 
@@ -86,7 +103,16 @@ function SideBar(){
                 <Route path="/SearchUsers" element={ <SearchUsers /> }>
                 </Route>
 
-                <Route path="/LastMovieInDb" element={ <LastMovieInDb /> }> 
+                <Route path="/UsersTable" element={ <UsersTable /> }> 
+                </Route>
+
+                <Route path="/LastProductInDb" element={ <LastProductInDb /> }> 
+                </Route>
+
+                <Route path="/ListProducts" element={ <ListProducts /> }> 
+                </Route>
+
+                <Route path="/ProductsTable" element={ <ProductsTable /> }> 
                 </Route>
 
                 <Route path="*" element={ <NotFound/> } />
