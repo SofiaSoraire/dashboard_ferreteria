@@ -75,7 +75,7 @@ function ListProducts(){
 														style={{ width: '90%', height: '400px', objectFit: 'cover' }} 
 													/>
 												</div>
-                                                {/*<p>Marca: {product.brand.name}</p>*/}
+                                                <p>Marca: {product.brand.name}</p>
 												<p>Stock disponible: {product.stock}</p>
                                                 <p>Categoría: {product.category.name}</p>
 											</div>

@@ -36,7 +36,7 @@ function ProductsTable(){
                                             <th>Nombre</th>
                                             <th>Descripción</th>
                                             <th>Precio ($)</th>
-                                            {/*<th>Marca</th>*/}
+                                            <th>Marca</th>
 											<th>Categoría</th>
 										</tr>
 									</thead>
@@ -48,7 +48,7 @@ function ProductsTable(){
 											<td>{product.name}</td>
 											<td>{product.description}</td>
                                             <td>{product.price}</td>
-											{/*<td>{product.brand}</td>*/}
+											<td>{product.brand.name}</td>
 											<td>{product.category.name}</td>
 										</tr>
 									)})}

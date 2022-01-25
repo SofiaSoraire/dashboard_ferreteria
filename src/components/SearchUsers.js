@@ -1,6 +1,5 @@
 import React , { useState, useEffect}  from 'react';
 
-// import noPoster from '../assets/images/darth-vader.jpg';
 
 function SearchUsers(){
 	const [users,setUsers] = useState([])
@@ -78,7 +77,7 @@ function SearchUsers(){
 													/>
 												</div>
 												<p>Correo: {user.email}</p>
-												{/*<p>Teléfono: {user.phone}</p>*/}
+												<p>Teléfono: {user.phone}</p>
 											</div>
 										</div>
 									</div>

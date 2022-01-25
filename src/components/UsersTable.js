@@ -36,7 +36,7 @@ function UsersTable(){
                                             <th>Nombre</th>
                                             <th>Apellido</th>
                                             <th>Email</th>
-                                            {/*<th>Teléfono</th>*/}
+                                            <th>Teléfono</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -47,7 +47,7 @@ function UsersTable(){
 											<td>{user.first_name}</td>
 											<td>{user.last_name}</td>
                                             <td>{user.email}</td>
-                                            {/*<td>{user.phone}</td>*/}
+                                            <td>{user.phone}</td>
 										</tr>
 									)})}
 									</tbody>
