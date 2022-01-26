@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react';
-
+import TopBar from './TopBar';
 
 function UsersTable(){
 
@@ -20,9 +20,14 @@ function UsersTable(){
 			.catch((e) => console.log(e))
 	});
 		
+	const style = {
+		width: '100%',
+	};
 
     return(
         <React.Fragment>
+					<div style ={style}>
+		            <TopBar />
 				    {/*<!-- PRODUCTS LIST -->*/}
 					<h1 className="h3 mb-2 text-gray-800">Tabla de usuarios</h1>
 					{/*<!-- DataTales Example -->*/}
@@ -54,7 +59,8 @@ function UsersTable(){
 								</table>
 							</div>
 						</div>
-					</div>            
+					</div>
+					</div>     
         </React.Fragment>
     )
 }

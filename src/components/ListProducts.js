@@ -1,4 +1,5 @@
 import React , { useState, useEffect}  from 'react';
+import TopBar from './TopBar';
 
 function ListProducts(){
 	const [products,setProducts] = useState([])
@@ -20,41 +21,21 @@ function ListProducts(){
 
 
 
-// FUNCION PARA FILTRAR EN EL ARRAY USERS - No terminada.
-//  const searchUsers = (type,date) => {
-// 	 let type = formRef.current.value
-// 	 if(type == 'email'){
-// 			users.filter(user => user.email == date)
-// 	 }else{
-// 			users.filter(user => user.first_name || user.last_name == date)
-// 		}}
- 
-
+	const style = {
+		width: '100%',
+	};
 
 
 	return(
+		<div style ={style}>
+		<TopBar />
 		<div className="container-fluid">
 			{
 				apiKey !== '' ?
 				<>
-					<div className="row my-4">
-						<div className="col-12 col-md-6">
-							{/* Buscador */}
-							<form method="GET">
-								<div className="form-group">
-									<label htmlFor="">Buscar por: <select>
-										<option value='name'>Nombre</option>
-										<option value='email'>Mail</option>
-										</select></label>
-									<input type="text" className="form-control" />
-								</div>
-								<button  className="btn btn-info">Search</button>
-							</form>
-						</div>
-					</div>
 					<div className="row">
 						<div className="col-12">
-							<h2>Buscar productos: {Search}</h2>
+							<h2>Productos: </h2>
 						</div>
 						{/* Listado de películas */}
 						{
@@ -90,6 +71,7 @@ function ListProducts(){
 				:
 				<div className="alert alert-danger text-center my-4 fs-2">Eyyyy... ¿PUSISTE TU APIKEY?</div>
 			}
+		</div>
 		</div>
 	)
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from 'react';
+import TopBar from './TopBar';
 
 function LastProductInDb(){
 
@@ -32,7 +33,13 @@ function LastProductInDb(){
         .catch((e) => console.log(e))
     });
 
+    const style = {
+		width: '100%',
+	};
+
     return(
+        <div style = {style}>
+        <TopBar />
         <div className="col-lg-6 mb-4">
             <div className="card shadow mb-4">
                 <div className="card-header py-3">
@@ -47,12 +54,11 @@ function LastProductInDb(){
                     <p>{(productsById.discount === 1) ? '¡Aproveche este descuento!' : ' '}</p>
                     <p>Precio unitario: ${productsById.price}</p>
                     <p>Stock disponible en unidades: {productsById.stock}</p>
-                    {/*<p>Marca: {productsById.brand.name}</p>*/}
-                    {/*<p>Categoría: {productsById.category.name}</p>*/}
                     <p>Descripción: {productsById.description}</p>
                 </div>
             </div>
         </div>
+        </div> 
     )
 }
 

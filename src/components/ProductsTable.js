@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react';
-
+import TopBar from './TopBar';
 
 function ProductsTable(){
 
@@ -24,6 +24,8 @@ function ProductsTable(){
     return(
         <React.Fragment>
 				    {/*<!-- PRODUCTS LIST -->*/}
+					<div>
+					<TopBar />
 					<h1 className="h3 mb-2 text-gray-800">Tabla de productos</h1>
 					{/*<!-- DataTales Example -->*/}
 					<div className="card shadow mb-4">
@@ -56,7 +58,8 @@ function ProductsTable(){
 								</table>
 							</div>
 						</div>
-					</div>            
+					</div> 
+					</div>    
         </React.Fragment>
     )
 }

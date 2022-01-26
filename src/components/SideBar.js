@@ -10,7 +10,6 @@ import UsersTable from './UsersTable';
 import NotFound from './NotFound';
 
 
-
 function SideBar(){
     return(
         <React.Fragment>

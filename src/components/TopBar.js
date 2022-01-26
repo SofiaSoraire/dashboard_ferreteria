@@ -1,11 +1,17 @@
 import React from 'react';
 import foto from '../assets/images/pomerania.jpg';
+import movilTool from '../assets/gifs/movilTool.gif';
+
+const style = {
+    borderRadius: '50%',
+};
 
 function TopBar(){
     return(
         <React.Fragment>
 				{/*<!-- Topbar -->*/}
 				<nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+					<img src={movilTool} alt="movilTool" style={style}/>
 
 					{/*<!-- Sidebar Toggle (Topbar) -->*/}
 					<button id="sidebarToggleTop" className="btn btn-link d-md-none rounded-circle mr-3">
