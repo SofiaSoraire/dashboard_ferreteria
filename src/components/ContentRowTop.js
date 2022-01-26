@@ -65,6 +65,7 @@ function ContentRowTop(){
 							</div>
 						</div>
 						{/*<!-- End content row last movie in Data Base -->*/}
+						
 
 						{/*<!-- Genres in DB -->*/}
 						<GenresInDb />
