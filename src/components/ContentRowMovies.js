@@ -5,7 +5,7 @@ function ContentRowTop(){
 
     const [products,setProducts] = useState([])
     const [users,setUsers] = useState([])
-    //const [categories,setCategories] = useState([])
+    const [categories,setCategories] = useState([])
 
     useEffect(() => {
         fetch('/api/products/',{
@@ -31,7 +31,7 @@ function ContentRowTop(){
             .catch((e) => console.log(e))
     });
 
-    /*useEffect(() => {
+    useEffect(() => {
         fetch('/api/categories/',{
             method: 'GET',
             headers:{
@@ -41,7 +41,7 @@ function ContentRowTop(){
             .then((response => response.json()))
             .then(info => setCategories(info.data))
             .catch((e) => console.log(e))
-    });*/
+    });
 
     let productInDataBase = {
         color:   "primary",
@@ -61,7 +61,7 @@ function ContentRowTop(){
     let user = {
         color:   "warning",
         titulo: "Total de categorías en la base de datos",
-        valor: 49, //categories.length
+        valor: categories.length,
         icono: "fas fa-table",
     }
 
