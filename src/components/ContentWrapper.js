@@ -1,7 +1,6 @@
 import React from 'react';
 import TopBar from './TopBar';
 import ContentRowTop from './ContentRowTop';
-import ProductIndexTable from './ProductIndexTable';
 import Footer from './Footer';
 
 function ContentWrapper(){
@@ -13,8 +12,7 @@ function ContentWrapper(){
                 {/*<!-- Main Content -->*/}
                 <div id="content">
                     <TopBar />
-                    <ContentRowTop /> {/*<!-- Total de productos, total de usuarios, total de categorias -->*/}
-                    <ProductIndexTable />
+                    <ContentRowTop /> 
                     <Footer />
                 </div>
             </div>    

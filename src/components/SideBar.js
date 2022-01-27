@@ -5,6 +5,8 @@ import ContentWrapper from './ContentWrapper';
 import SearchUsers from './SearchUsers';
 import ListProducts from './ListProducts';
 import LastProductInDb from './LastProductInDb';
+import LastUserInDb from './LastUserInDb';
+import CategoriesInDb from './CategoriesInDb';
 import ProductsTable from './ProductsTable';
 import UsersTable from './UsersTable';
 import NotFound from './NotFound';
@@ -40,7 +42,7 @@ function SideBar(){
                 <hr className="sidebar-divider"/>
 
                 {/*<!-- Heading -->*/}
-                <div className="sidebar-heading">Actions</div>
+                <div className="sidebar-heading">Productos</div>
 
                 {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
@@ -50,30 +52,6 @@ function SideBar(){
                     </Link>
                 </li>
 
-                {/*<!-- Nav Item - Tables -->*/}
-                <li className="nav-item">
-                    <Link className="nav-link" to="/">
-                        <i className="fas fa-fw fa-chart-pie"></i>
-                        <span>Productos por categoria</span>
-                    </Link>
-                </li>
-
-                {/*<!-- Busqueda de usuarios -->*/}
-                <li className="nav-item">
-                    <Link className="nav-link" to="SearchUsers">
-                        <i className="fas fa-user"></i>
-                        <span>Listado de usuarios</span>
-                    </Link>
-                </li>
-
-                <li className="nav-item">
-                    <Link className="nav-link collapsed" to="UsersTable">
-                        <i className="fas fa-table"></i>
-                        <span>Tabla de usuarios</span>
-                    </Link>
-                </li>
-
-                {/*<!-- Nav Item - Pages -->*/}
                 <li className="nav-item">
                     <Link className="nav-link collapsed" to="ListProducts">
                         <i className="fas fa-hammer"></i>
@@ -88,6 +66,40 @@ function SideBar(){
                     </Link>
                 </li>
 
+                <hr className="sidebar-divider d-none d-md-block"/>
+                <div className="sidebar-heading">Categorías</div>
+
+                <li className="nav-item">
+                    <Link className="nav-link" to="/CategoriesInDb">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>Categorias de la base de datos</span>
+                    </Link>
+                </li>
+
+                <hr className="sidebar-divider d-none d-md-block"/>
+                <div className="sidebar-heading">Usuarios</div>
+
+                <li className="nav-item">
+                    <Link className="nav-link" to="LastUserInDb">
+                        <i className="fas fa-fw fa-info"></i>
+                        <span>Detalle último usuario creado</span>
+                    </Link>
+                </li>
+
+                <li className="nav-item">
+                    <Link className="nav-link" to="SearchUsers">
+                        <i className="fas fa-user"></i>
+                        <span>Listado de usuarios</span>
+                    </Link>
+                </li>
+
+                <li className="nav-item">
+                    <Link className="nav-link collapsed" to="UsersTable">
+                        <i className="fas fa-table"></i>
+                        <span>Tabla de usuarios</span>
+                    </Link>
+                </li>
+
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider d-none d-md-block"/>
             </ul>
@@ -98,11 +110,17 @@ function SideBar(){
             <Routes>
                 <Route exact path="/" element={ <ContentWrapper /> }>
                 </Route>
+
+                <Route path="/LastUserInDb" element={ <LastUserInDb /> }> 
+                </Route>
                 
                 <Route path="/SearchUsers" element={ <SearchUsers /> }>
                 </Route>
 
                 <Route path="/UsersTable" element={ <UsersTable /> }> 
+                </Route>
+
+                <Route path="/CategoriesInDb" element={ <CategoriesInDb /> }> 
                 </Route>
 
                 <Route path="/LastProductInDb" element={ <LastProductInDb /> }> 
